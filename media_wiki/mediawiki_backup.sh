@@ -27,9 +27,9 @@ mysqldump -h $mysql_host -u $mysql_user --password=$mysql_pass \
     $wiki_backup_dir/$(date +%Y%m%d)/backup.sql.gz
 
 if [[ $? -ne 0 ]]; then
-	echo $(date): Backup failed >> $backup_log_dir/backup.log
-	exit 1
+    echo $(date): Backup failed >> $backup_log_dir/backup.log
+    exit 1
 else
-	echo $(date): Backup succeeded >> $backup_log_dir/backup.log
-	exit 0
+    echo $(date): Backup succeeded >> $backup_log_dir/backup.log
+    exit 0
 fi

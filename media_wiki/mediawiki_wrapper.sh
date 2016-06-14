@@ -16,8 +16,8 @@ local_log_dir=$LOCAL_LOG_DIR
 
 ssh $remote_user@$remote_host "/usr/local/bin/mediawiki_backup.sh" 
 if [[ $? -ne 0 ]]; then
-	echo $(date): mediawiki script failed >> $local_log_dir/mediawikibackup.err
-	exit 1
+    echo $(date): mediawiki script failed >> $local_log_dir/mediawikibackup.err
+    exit 1
 fi
 
 mkdir $local_backup_dir/$(date +%Y%m%d)/
